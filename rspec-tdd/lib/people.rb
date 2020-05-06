@@ -1,3 +1,3 @@
 class People
-  attr_acessor :nome, :idade
+  attr_accessor :name, :age
 end
