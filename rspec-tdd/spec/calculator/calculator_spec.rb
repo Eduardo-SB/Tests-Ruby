@@ -7,6 +7,15 @@ describe Calculator, '- Class Calculator' do
 	# subject(:calc) { described_class.new() } 
 	subject(:calc) { Calculator.new() } 
 
+	context '#div' do
+		it 'divide by 0' do
+			expect{calc.div(3,0)}.to raise_error(ZeroDivisionError)
+			expect{calc.div(3,0)}.to raise_error('divided by 0')
+			expect{calc.div(3,0)}.to raise_error(ZeroDivisionError,'divided by 0')
+			expect{calc.div(3,0)}.to raise_error(/divided/)
+		end
+	end
+
 	context '#sum' do
 		it 'with positive numbers' do
 	    result = calc.sum(5,7)
