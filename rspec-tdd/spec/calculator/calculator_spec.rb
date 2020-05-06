@@ -11,6 +11,7 @@ describe Calculator, '- Class Calculator' do
 		it 'with positive numbers' do
 	    result = calc.sum(5,7)
 	    expect(result).to eq(12)
+	    expect(result).not_to eq(0)
 		end
 
 		it 'with negative and positive numbers' do
