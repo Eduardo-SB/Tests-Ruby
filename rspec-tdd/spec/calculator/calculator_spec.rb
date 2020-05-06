@@ -1,10 +1,11 @@
 require 'calculator'
 
-describe 'Class Calculator' do
 # describe Calculator do
+# describe 'Class Calculator' do
+describe Calculator, '- Class Calculator' do
 
-	subject(:calc) { Calculator.new() } 
 	# subject(:calc) { described_class.new() } 
+	subject(:calc) { Calculator.new() } 
 
 	context '#sum' do
 		it 'with positive numbers' do
