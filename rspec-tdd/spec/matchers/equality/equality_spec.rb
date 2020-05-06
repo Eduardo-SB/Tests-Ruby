@@ -1,4 +1,4 @@
-describe 'Matchers - Comparation' do
+describe 'Matchers - Equality' do
   it '#equal = Test is the same object' do
     x = 'ruby'
     y = 'ruby'
