@@ -18,6 +18,22 @@ require '../helpers/helper'
 
 RSpec.configure do |config|
 
+  config.before(:suite) do
+    p '>>> Before suite tests'
+  end
+
+  config.after(:suite) do
+    p '>>> Afeter suite tests'
+  end
+
+   config.before(:all) do #All and context is the same method
+    p '>>> Before all tests'
+  end
+
+  config.after(:context) do 
+    p '>>> Afeter all tests'
+  end
+
   #Helper Methods 
   config.include Helper
 
