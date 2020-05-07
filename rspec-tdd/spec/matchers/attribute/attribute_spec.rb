@@ -2,15 +2,25 @@ require 'people'
 
 describe 'Atribute' do
 
-  before(:each) do
-    p '>>> Before test'
-    @people = People.new
-  end
+  # before(:each) do
+  #   p '>>> Before test'
+  #   @people = People.new
+  # end
 
-  after(:each) do
-    p '>>> After test'
-    @people.name = "No Name"
-    p ">>> #{@people.inspect}"
+  # after(:each) do
+  #   p '>>> After test'
+  #   @people.name = "No Name"
+  #   p ">>> #{@people.inspect}"
+  # end
+
+  around(:each) do |test|
+    p '>>> Before'
+    @people = People.new
+
+    test.run #Run test
+
+    @people.name = 'No name'
+    p ">>> After #{@people.inspect}"
   end
 
   it 'have_attributes' do

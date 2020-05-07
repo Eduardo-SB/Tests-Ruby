@@ -23,7 +23,7 @@ RSpec.configure do |config|
   end
 
   config.after(:suite) do
-    p '>>> Afeter suite tests'
+    p '>>> After suite tests'
   end
 
    config.before(:all) do #All and context is the same method
@@ -31,7 +31,7 @@ RSpec.configure do |config|
   end
 
   config.after(:context) do 
-    p '>>> Afeter all tests'
+    p '>>> After all tests'
   end
 
   #Helper Methods 
