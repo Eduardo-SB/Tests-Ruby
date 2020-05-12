@@ -13,4 +13,38 @@ describe "Stub" do
     expect(course_finished).to be true
   end
   
+  it "Argument dinamic" do
+    student = Student.new
+
+    allow(student).to receive(:foo) do |arg|
+      if arg == :hello
+        "hi"
+      elsif arg == :hi
+        "hello"
+      end
+    end
+
+    expect(student.foo(:hello)).to eq("hi")
+    expect(student.foo(:hi)).to eq("hello")
+  end
+  
+  it "Any class instance" do
+    student = Student.new
+    other_student = Student.new
+
+    allow_any_instance_of(Student).to receive(:bar).and_return (true)
+
+    expect(student.bar).to be true
+    expect(other_student.bar).to be true
+  end
+
+  it "Errors" do
+    student = Student.new
+
+    allow(student).to receive(:bar).and_raise(RuntimeError)
+
+    expect{ student.bar }.to raise_error(RuntimeError)
+  end
+  
+
 end
